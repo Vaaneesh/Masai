@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Library Management System</h1>
+        <div id="booksSection">
+        <h2>Books</h2>
+        <form id="bookForm">
+            <input type="text" id="bookTitle" placeholder="Title" required>
+            <input type="text" id="bookAuthor" placeholder="Author" required>
+            <input type="text" id="bookGenre" placeholder="Genre" required>
+            <input type="number" id="bookYear" placeholder="Published Year" required>
+            <label>
+                Available:
+                <input type="checkbox" id="bookAvailable" checked>
+            </label>
+            <button type="submit">Add Book</button>
+        </form>
+
+        <div id="bookList"></div>
+        <div>
+            <label for="itemsPerPage">Items per page:</label>
+            <select id="itemsPerPage">
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="15">15</option>
+            </select>
+            <button id="prevPage">Previous</button>
+            <button id="nextPage">Next</button>
+        </div>
+    </div>
+    <div id="membersSection">
+        <h2>Members</h2>
+        <form id="memberForm">
+            <input type="text" id="memberName" placeholder="Name" required>
+            <input type="date" id="membershipDate" required>
+            <label>
+                Active:
+                <input type="checkbox" id="memberActive" checked>
+            </label>
+            <button type="submit">Add Member</button>
+        </form>
+
+        <div id="memberList"></div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
