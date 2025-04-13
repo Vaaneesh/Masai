@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h2>Admin Dashboard</h2>
+    <form id="add-product-form">
+        <input type="text" id="product-title" placeholder="Product Title" required />
+        <input type="number" id="product-price" placeholder="Product Price" required />
+        <input type="text" id="product-image" placeholder="Image URL" required />
+        <button type="submit">Add Product</button>
+    </form>
+    <div id="product-list"></div>
+</body>
+</html>
