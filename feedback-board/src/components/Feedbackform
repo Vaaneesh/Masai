@@ -1,0 +1,27 @@
+import React from "react";
+
+function Feedbackform({onSubmit}){
+    const[name,setName]=React.useState('');
+    const [email,setEmail]=React.useState('');
+    const [comment,setComment]=React.useState('');
+    const handleSubmit=(e)=>{
+        e.preventDefault();
+        if(!name||!email||!comment){
+            alert("All fields are required");
+            return;
+        }
+        onSubmit({name,email,comment,timestamp:Date.now()});
+        setName('');
+        setEmail('');
+        setComment('');
+    };
+    return(
+        <form onSubmit={handleSubmit} className="feedback-form">
+            <input type="text" placeholder="Name" value={name} onChange={(e)=>setName(e.target.value)}></input>
+            <input type="email" placeholder="Email" value={email} onChange={(e)=>setEmail(e.target.value)}></input>
+            <input type="text" placeholder="Comment" value={comment} onChange={(e)=>setComment(e.target.value)}></input>
+            <button type="submit">Submit</button>
+        </form>
+    )
+}
+export default Feedbackform;

@@ -1,0 +1,12 @@
+import React from 'react'
+import FeedbackItem from './components/FeedbackItem'
+function FeedbackList({feedbacks,onDelete}){
+    return(
+        <div className="feedback-list">
+            {feedbacks.map((fb)=>{
+                <FeedbackItem key={fb.id} feedback={fb} onDelete={onDelete}/>
+            })};
+        </div>
+    )
+}
+export default FeedbackList;
